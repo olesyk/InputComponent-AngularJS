@@ -1,0 +1,32 @@
+<div>
+	<label for="{{$ctrl.id}}">
+		{{$ctrl.id | uppercase}}:
+	</label>
+	<input class="form-control"
+		ng-class="{ 'has-error' : !$ctrl.model.$valid, 'is-empty': !$ctrl.value}" 
+		ng-model="$ctrl.value"
+		ng-change="$ctrl.onChange()"
+		type="{{$ctrl.type}}"
+		id="{{$ctrl.id}}"
+		placeholder="Enter {{$ctrl.id}}"
+		required>  
+
+	<p ng-if="!$ctrl.model.$valid" class="warning">
+		The {{$ctrl.model.$name}} is not valid or too long!!!
+	</p>
+	<p class="text-warning warning"> <span ng-if="!$ctrl.model.$dirty || !$ctrl.value">
+		{{$ctrl.requiredWarning({message: $ctrl.id})}}
+		</span>
+	<span ng-switch="$ctrl.model.$name">
+		<span ng-switch-when="name">
+			The length of {{$ctrl.id}} can not be more than 10 symbols.
+		</span>
+		<span ng-switch-when="surname">
+			The length of {{$ctrl.id}} can not be more than 20 symbols.
+		</span>
+		<span ng-switch-when="password">
+			The length of {{$ctrl.id}} can not be more than 6 symbols.
+		</span>
+		</span>
+	</p>
+</div>

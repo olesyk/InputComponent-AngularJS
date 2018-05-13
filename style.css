@@ -1,0 +1,26 @@
+.jumbotron {
+	height: 200px;
+}
+
+.form {
+	width: 33%;
+	margin: 0 auto;
+}
+
+.warning {
+	font-size: 1rem;
+}
+
+.has-error {
+	color: red;
+	background-color: lightpink;
+}
+
+.is-empty {
+	background-color: bisque;
+}
+
+label {
+	color: green;
+	font-weight: bold;
+}
